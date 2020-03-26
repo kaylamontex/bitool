@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',       function () { return view('welcome'); });
-Route::get('test',    function () { return view('test'); });
-
 Auth::routes();
 
+Route::get('/',       function () { return view('welcome'); });
+Route::get('test',    function () { return view('test'); });
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('login/okta', 'Auth\LoginController@redirectToProvider')->name('login-okta');
+Route::get('login/okta/callback', 'Auth\LoginController@handleProviderCallback');
