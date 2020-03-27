@@ -49,7 +49,7 @@ class LoginController extends Controller
             return redirect('/login-okta');
         }
 
-        return redirect('/home');
+        return redirect('/dashboard');
     }
 
     public function logout()
