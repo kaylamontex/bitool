@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('app-head')
+<title>BI Tool - Dashboard</title>
+@endsection
+
+@section('app-content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
