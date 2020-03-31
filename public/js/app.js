@@ -49505,6 +49505,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./main */ "./resources/js/main.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49643,6 +49645,24 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/main.js":
+/*!******************************!*\
+  !*** ./resources/js/main.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  /******************
+  *  Sidebar toggles
+  *******************/
+  $('.toggle-sidebar').click(function (e) {
+    $('.main-sidebar').toggleClass('open');
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49661,8 +49681,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/bitool/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/vagrant/code/bitool/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/kayla.chan/projects/code/bitool/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/kayla.chan/projects/code/bitool/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

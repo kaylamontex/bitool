@@ -2,11 +2,20 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Montserrat',Helvetica,Arial,sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
+$color-primary: #7367F0;
+$color-secondary: #67a0f0;
+
+$color-main-text: #626262;
+$color-main-bg: #F8F8F8;
+
+$color-white: #FFFFFF;
+$color-black: #FFFFFF;
+
 $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
@@ -17,3 +26,7 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+// Interface
+$sidebar-width: 260px;
+$mobile-navbar-topbar-height: 60px;
