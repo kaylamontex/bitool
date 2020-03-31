@@ -17,6 +17,7 @@ Auth::routes();
 
 Route::get('/',                     'WebsiteController@home')->name('website-home');
 Route::get('/dashboard',            'DashboardController@home')->name('dashboard-home');
+Route::get('/dashboard/reports',    'DashboardController@reports')->name('dashboard-reports');
 
 Route::get('login/okta',            'Auth\LoginController@redirectToProvider')->name('login-okta');
 Route::get('login/okta/callback',   'Auth\LoginController@handleProviderCallback');

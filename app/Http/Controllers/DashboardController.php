@@ -20,4 +20,9 @@ class DashboardController extends Controller
     {
         return view('dashboard');
     }
+
+    public function reports()
+    {
+        return view('reports');
+    }
 }
