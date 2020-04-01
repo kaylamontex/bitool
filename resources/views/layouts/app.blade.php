@@ -6,40 +6,40 @@
 @endsection
 
 @section('content')
-    <div id="app">
-        <aside class="main-sidebar">
-            <div class="main-navbar">
-                <nav class="navbar">
-                    <a href="{{ url('/') }}">
-                        <img class="logo" src="{{ asset('img/M-Blue-Orange-Transparent-Digital.png') }}">
-                        <span>BI Tool</span>
-                    </a>
-                    <a class="toggle-sidebar">
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </nav>
-            </div>
-            <div class="nav-wrapper">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'dashboard-home' ? 'active':'' }}" href="{{ url('/dashboard') }}">
-                            <i class="fas fa-home"></i><span>Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'dashboard-reports' ? 'active':'' }}" href="{{ url('/dashboard/reports') }}">
-                            <i class="far fa-file-alt"></i><span>Reports</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-        <div class="mobile-navbar">
-            <a class="toggle-sidebar">
-                <i class="fas fa-bars"></i>
-            </a>
+    <aside class="main-sidebar">
+        <div class="main-navbar">
+            <nav class="navbar">
+                <a href="{{ url('/') }}">
+                    <img class="logo" src="{{ asset('img/M-Blue-Orange-Transparent-Digital.png') }}">
+                    <span>BI Tool</span>
+                </a>
+                <a class="toggle-sidebar">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </nav>
         </div>
-        <main class="main-content">
+        <div class="nav-wrapper">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::currentRouteName() == 'dashboard-home' ? 'active':'' }}" href="{{ url('/dashboard') }}">
+                        <i class="fas fa-home"></i><span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::currentRouteName() == 'dashboard-reports' ? 'active':'' }}" href="{{ url('/dashboard/reports') }}">
+                        <i class="far fa-file-alt"></i><span>Reports</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="mobile-navbar">
+        <a class="toggle-sidebar">
+            <i class="fas fa-bars"></i>
+        </a>
+    </div>
+    <main class="main-content">
+        <div class="main-content-container">
             <div class="main-topbar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -59,9 +59,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="main-content-container">
-                @yield('app-content')
-            </div>
-        </main>
-    </div>
+            @yield('app-content')
+        </div>
+        <footer>
+            COPYRIGHT ©{{ now()->year }} <a class="classic" href="https://www.montgomerygroup.com/" target="_blank">Montgomery Group</a>. All rights Reserved.
+        </footer>
+    </main>
 @endsection

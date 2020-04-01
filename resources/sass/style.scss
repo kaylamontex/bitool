@@ -11,6 +11,20 @@ a {
         text-decoration: none;
         color: $color-main-text;
     }
+
+    &.classic {
+        color: $color-primary;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+    }
+}
+
+footer {
+    height: $footer-height;
+    padding: 0 2.2rem;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -146,7 +160,6 @@ a {
 
 .main-content {
     margin-left: $sidebar-width;
-    padding: 1.3rem 2.2rem;
 
     @include media-breakpoint-down(sm) {
         & {
@@ -154,6 +167,11 @@ a {
             margin-top: $mobile-navbar-topbar-height;
         }
     }
+}
+
+.main-content-container {
+    min-height: calc(100vh - #{$footer-height});
+    padding: 1.3rem 2.2rem;
 }
 
 .mobile-navbar {

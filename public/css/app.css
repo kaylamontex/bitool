@@ -10897,6 +10897,19 @@ a:hover {
   color: #626262;
 }
 
+a.classic {
+  color: #7367F0;
+}
+
+a.classic:hover {
+  color: #7367F0;
+}
+
+footer {
+  height: 46px;
+  padding: 0 2.2rem;
+}
+
 .h1,
 .h2,
 .h3,
@@ -11038,7 +11051,6 @@ h6 {
 
 .main-content {
   margin-left: 260px;
-  padding: 1.3rem 2.2rem;
 }
 
 @media (max-width: 767.98px) {
@@ -11046,6 +11058,11 @@ h6 {
     margin-left: auto;
     margin-top: 60px;
   }
+}
+
+.main-content-container {
+  min-height: calc(100vh - 46px);
+  padding: 1.3rem 2.2rem;
 }
 
 .mobile-navbar {
