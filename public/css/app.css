@@ -11077,7 +11077,16 @@ h6 {
 }
 
 .navbar .logo {
-  max-width: 46px;
+  max-width: 40px;
+  margin-right: 14px;
+}
+
+.navbar span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3C5164;
+  vertical-align: middle;
+  letter-spacing: 0.6px;
 }
 
 .navbar .toggle-sidebar {
@@ -11210,6 +11219,10 @@ h6 {
 .feature-img {
   max-width: 180px;
   width: 100%;
+}
+
+.report-form {
+  max-width: 500px;
 }
 
 /*!

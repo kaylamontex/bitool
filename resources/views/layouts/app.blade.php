@@ -12,6 +12,7 @@
                 <nav class="navbar">
                     <a href="{{ url('/') }}">
                         <img class="logo" src="{{ asset('img/M-Blue-Orange-Transparent-Digital.png') }}">
+                        <span>BI Tool</span>
                     </a>
                     <a class="toggle-sidebar">
                         <i class="fas fa-arrow-left"></i>

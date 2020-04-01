@@ -184,7 +184,16 @@ a {
     padding: 1.3rem 1rem;
 
     .logo {
-        max-width: 46px;
+        max-width: 40px;
+        margin-right: 14px;
+    }
+
+    span {
+        font-size: 20px;
+        font-weight: 500;
+        color: $color-montgomery-primary;
+        vertical-align: middle;
+        letter-spacing: 0.6px;
     }
 
     .toggle-sidebar {
@@ -334,4 +343,8 @@ a {
 .feature-img {
     max-width: 180px;
     width: 100%;
+}
+
+.report-form {
+    max-width: 500px;
 }
