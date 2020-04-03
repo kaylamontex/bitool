@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('email')->unique();
             $table->string('name');
-            $table->text('token');
+            $table->text('access_token');
+            $table->text('id_token');
             $table->timestamps();
         });
     }

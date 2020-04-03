@@ -30,16 +30,18 @@ class LoginController extends Controller
 
         $localUser = User::where('email', $user->email)->first();
 
-        // create a local user with the email and token from Okta
+        // Create a local user with the email and tokens from Okta
         if (! $localUser) {
             $localUser = User::create([
                 'email' => $user->email,
                 'name'  => $user->name,
-                'token' => $user->token,
+                'access_token' => $user->accessTokenResponseBody['access_token'],
+                'id_token' => $user->accessTokenResponseBody['id_token'],
             ]);
         } else {
-            // if the user already exists, just update the token:
-            $localUser->token = $user->token;
+            // if the user already exists, just update the tokens:
+            $localUser->access_token = $user->accessTokenResponseBody['access_token'];
+            $localUser->id_token = $user->accessTokenResponseBody['id_token'];
             $localUser->save();
         }
 
