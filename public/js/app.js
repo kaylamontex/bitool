@@ -49525,9 +49525,107 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new Vue({
-  el: '#app'
-});
+/************************************************
+ *              generate-reports                *
+ ************************************************/
+
+if (document.getElementById("generate-reports")) {
+  var generateReports = new Vue({
+    el: '#generate-reports',
+    data: function data() {
+      return {
+        user_id_token: $('#user_id_token').html(),
+        user_email: $('#user_email').html(),
+        available_reports_errored: false,
+        available_reports_loading: true,
+        available_shows_shown: false,
+        available_shows_errored: false,
+        available_shows_loading: true,
+        available_reports: null,
+        available_shows: null,
+        process_report_button_shown: false,
+        report_type: '',
+        report_show: ''
+      };
+    },
+    methods: {
+      onReportsChange: function onReportsChange() {
+        this.available_shows_loading = true;
+        this.available_shows_shown = false;
+        this.process_report_button_shown = false;
+        this.report_show = '';
+
+        if (this.report_type != '' && this.report_type !== undefined) {
+          this.getAvailableShowsForReport('hrc-2020', this.report_type);
+          this.available_shows_shown = true;
+        }
+
+        if (this.report_show != '' && this.report_show !== undefined) {
+          this.process_report_button_shown = true;
+        }
+      },
+      onShowsChange: function onShowsChange() {
+        if (this.report_show != '' && this.report_show !== undefined) {
+          this.process_report_button_shown = true;
+        }
+      },
+      getAvailableReports: function getAvailableReports(show_code, email) {
+        var _this = this;
+
+        axios.get('https://api.montgomerylabs.io:6001/api/checkcompany', {
+          params: {
+            show_code: show_code,
+            email: email
+          }
+        }).then(function (response) {
+          _this.available_reports = response.data.data;
+        })["catch"](function (error) {
+          console.log(error);
+          _this.available_reports_errored = true;
+        })["finally"](function () {
+          return _this.available_reports_loading = false;
+        });
+      },
+      getAvailableShowsForReport: function getAvailableShowsForReport(show_code, email) {
+        var _this2 = this;
+
+        axios.get('https://api.montgomerylabs.io:6001/api/checkcompany', {
+          params: {
+            show_code: show_code,
+            email: email
+          }
+        }).then(function (response) {
+          _this2.available_shows = response.data.data;
+        })["catch"](function (error) {
+          console.log(error);
+          _this2.available_shows_errored = true;
+        })["finally"](function () {
+          return _this2.available_shows_loading = false;
+        });
+      },
+      processReport: function processReport() {
+        console.log('report_type', this.report_type);
+        console.log('report_show', this.report_show);
+        console.log('user_email', this.user_email);
+        axios.get('https://api.montgomerylabs.io:6001/api/checkcompany', {
+          params: {
+            code: this.report_type,
+            show: this.report_show,
+            email: this.user_email
+          }
+        }).then(function (response) {// this.available_shows = response.data.data
+          // console.log('available_shows', response)
+        })["catch"](function (error) {
+          console.log(error); // this.available_shows_errored = true
+        })["finally"]();
+      }
+    },
+    mounted: function mounted() {
+      this.getAvailableReports('hrc-2020', 'zzxx');
+      console.log(this.user_id_token);
+    }
+  });
+}
 
 /***/ }),
 

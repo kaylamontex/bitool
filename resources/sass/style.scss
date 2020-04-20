@@ -364,5 +364,15 @@ footer {
 }
 
 .report-form {
-    max-width: 500px;
+    max-width: 600px;
+}
+
+.dashboard-home {
+    .card {
+        min-height: 323px;
+    }
+}
+
+.meta-data {
+    display: none;
 }

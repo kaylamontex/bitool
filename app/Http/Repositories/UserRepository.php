@@ -22,6 +22,17 @@ class UserRepository
         return $user;
     }
 
+    public function getUserIdTokenByUserId($userId)
+    {
+        $user = $this->getUserByUserId($userId);
+        if ( $user ) {
+            $userIdToken = $user['id_token'];
+        } else {
+            $userIdToken = null;
+        }
+        return $userIdToken;
+    }
+
     public function updateUserByUserId(array $data, $userId)
     {
         $record = $this->userModel->find($userId);
