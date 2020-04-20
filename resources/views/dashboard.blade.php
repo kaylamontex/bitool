@@ -5,7 +5,7 @@
 @endsection
 
 @section('app-content')
-<div class="row">
+<div class="row dashboard-home">
     <div class="col-lg-4">
         <div class="card text-center">
             <div class="card-body">
